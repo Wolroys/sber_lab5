@@ -11,12 +11,11 @@ public class Task4Execution {
     public static void fieldsHandler(Class<?> clazz){
         Field[] fields = clazz.getDeclaredFields();
 
-        FieldsKeeper fieldsKeeper = new FieldsKeeper();
 
         for (Field field : fields){
             field.setAccessible(true);
             try {
-                if (field.getName().equals(field.get(fieldsKeeper)))
+                if (field.getName().equals(field.get(null)))
                     System.out.println(field.getName() + " == " + field.get(null));
                 else
                     System.out.println(field.getName() + " != " + field.get(null));
